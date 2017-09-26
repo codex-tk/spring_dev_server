@@ -15,7 +15,7 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
-group = 'com.codex'
+group = 'com.codex.devserver'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -35,4 +35,6 @@ dependencies {
 	runtime('org.postgresql:postgresql')
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile('org.springframework.boot:spring-boot-starter-integration')
+	compile('org.springframework.integration:spring-integration-mqtt')
 }

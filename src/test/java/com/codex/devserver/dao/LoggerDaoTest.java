@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.codex.devserver.domain.log.Logger;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class LoggerDaoTest {
@@ -15,7 +17,17 @@ public class LoggerDaoTest {
 	
 	@Test
 	public void findLoggerByid() {
-		
+		Logger logger = new Logger();
+		logger.setId(100);
+		logger.setInfo("TestInfo");
+		logger.setName("TestLogger");
+		loggerDao.save( logger );
+		/*
+		logger = loggerDao.findLoggerByid((long) 100);
+
+		Assert.isTrue(logger.getId() == 100);
+		Assert.isTrue(logger.getName().equals("TestInfo"));
+		Assert.isTrue(logger.getInfo().equals("TestLogger"));*/
 	}
 
 }
